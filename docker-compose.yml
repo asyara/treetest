@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:13.1-alpine'
+    container_name: treetest-db
+    environment:
+      - POSTGRES_DB=treetest
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5435:5432"
+    volumes:
+      - /Dockerfile/treetest/postgres/data:/var/lib/postgresql/data
+    networks:
+      - treetest
+
+  app:
+    build: .
+    networks:
+      - treetest
+
+networks:
+  treetest:
