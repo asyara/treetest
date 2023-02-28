@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    username: admin
+    password: admin
+    url: jdbc:postgresql://localhost:5435/treetest
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+flyway:
+  url: jdbc:postgresql://localhost:5435/treetest
+  schemas: treetest
+  user: admin
+  password: admin
