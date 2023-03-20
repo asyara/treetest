@@ -1,3 +1,4 @@
 spring:
   profiles:
-    active: '@activated.profile@'
+    active: 'local'
+    default: 'local'

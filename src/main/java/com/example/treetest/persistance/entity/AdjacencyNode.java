@@ -12,7 +12,6 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.FetchType.LAZY;
-import static javax.persistence.GenerationType.IDENTITY;
 import static org.hibernate.annotations.OnDeleteAction.CASCADE;
 
 @Getter
@@ -22,7 +21,6 @@ import static org.hibernate.annotations.OnDeleteAction.CASCADE;
 public class AdjacencyNode implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = IDENTITY)
     private long id;
 
     @NotNull
