@@ -31,7 +31,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <activatedProperties>dev</activatedProperties>
+                <activatedProperties>application-dev</activatedProperties>
             </properties>
         </profile>
     </profiles>

@@ -21,6 +21,7 @@ import static org.hibernate.annotations.OnDeleteAction.CASCADE;
 public class AdjacencyNode implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotNull

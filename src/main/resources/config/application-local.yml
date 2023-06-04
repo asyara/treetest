@@ -1,13 +1,14 @@
 spring:
   datasource:
-    username: admin
-    password: admin
+    username: test
+    password: test
     url: jdbc:postgresql://localhost:5435/treetest
+    driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 flyway:
   url: jdbc:postgresql://localhost:5435/treetest
   schemas: treetest
-  user: admin
-  password: admin
+  user: test
+  password: test

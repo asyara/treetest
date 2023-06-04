@@ -1,21 +1,23 @@
 version: '3'
 services:
-  postgres:
+  db:
     image: 'postgres:13.1-alpine'
     container_name: treetest-db
     environment:
       - POSTGRES_DB=treetest
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
-      - "5435:5432"
-    volumes:
-      - /Dockerfile/treetest/postgres/data:/var/lib/postgresql/data
+      - "5432:5432"
     networks:
       - treetest
 
   app:
     build: .
+    depends_on:
+      db:
+        condition: service_started
     networks:
       - treetest
 

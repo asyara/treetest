@@ -1,15 +1,15 @@
-CREATE TABLE adjacency_tree (
+CREATE TABLE IF NOT EXISTS adjacency_tree (
   id BIGSERIAL NOT NULL,
   name VARCHAR(255),
   parent_id int8,
   PRIMARY KEY (id)
 );
-CREATE TABLE node_name (
+CREATE TABLE IF NOT EXISTS node_name (
   id BIGSERIAL NOT NULL,
   name VARCHAR(255),
   PRIMARY KEY (id)
 );
-CREATE TABLE tree_path (
+CREATE TABLE IF NOT EXISTS tree_path (
   ancestor int8 NOT NULL,
   descendant int8 NOT NULL,
   PRIMARY KEY (ancestor, descendant)
